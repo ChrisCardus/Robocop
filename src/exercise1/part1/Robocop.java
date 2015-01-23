@@ -20,8 +20,8 @@ public class Robocop extends RobotProgrammingDemo {
 				Motor.B, true);
 
 		Robot robocop = new Robot(pilot);
-		direction = -1;
-
+		direction = -1;	
+		
 		Button.LEFT.addButtonListener(new ButtonListener() {
 			public void buttonReleased(Button b) {
 			}

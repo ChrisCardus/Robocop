@@ -1,7 +1,8 @@
 package rp.systems;
 
-import lejos.robotics.navigation.DifferentialPilot;
+import lejos.nxt.SensorPort;
 import lejos.nxt.TouchSensor;
+import lejos.robotics.navigation.DifferentialPilot;
 
 public class Robot {
 	private DifferentialPilot pilot;
@@ -9,11 +10,9 @@ public class Robot {
 	
 	public Robot(DifferentialPilot pilot) {
 		this.pilot = pilot;
-	}
-	
-	public Robot(DifferentialPilot pilot, TouchSensor sensor) {
-		this.pilot = pilot;
-		this.sensor = sensor;
+		this.sensor = new TouchSensor(SensorPort.S1);;
+		
+		
 	}
 	
 	public void forward(){
@@ -21,11 +20,15 @@ public class Robot {
 	}
 	
 	public void turn() {
-		pilot.travel(-10.0);
-		pilot.rotate(180);
+		pilot.travel(-5.0);
+		pilot.rotate(190);
 	}
 
 	public void stop() {
 		pilot.stop();
+	}
+	
+	public boolean bump(){
+		return sensor.isPressed();
 	}
 }

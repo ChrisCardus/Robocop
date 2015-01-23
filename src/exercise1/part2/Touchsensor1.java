@@ -19,14 +19,14 @@ public class Touchsensor1 extends RobotProgrammingDemo {
 		// TODO Auto-generated method stub
 		TouchSensor sensor = new TouchSensor(SensorPort.S1);
 		DifferentialPilot pilot = new DifferentialPilot(2.1f, 4.4f, Motor.A,
-				Motor.B, true);
+				Motor.B, false);
 		
-		Robot robocop = new Robot(pilot, sensor);
+		Robot robocop = new Robot(pilot);
 
 		Button.waitForAnyPress();
 		while(m_run = true){
 			robocop.forward();
-			if(sensor.isPressed()){
+			if(robocop.bump()){
 				robocop.turn();
 			}
 		}
