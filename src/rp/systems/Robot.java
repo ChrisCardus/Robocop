@@ -25,7 +25,7 @@ public class Robot {
 
 	public void followLeft() {
 		if (sonic.getRange() < 10) {
-			pilot.arcForward(50);
+			pilot.arcForward(sonic.getRange());
 		} else if (sonic.getRange() > 12 && sonic.getRange() < 30) {
 			pilot.arcForward(-50);
 		} else if (sonic.getRange() > 30) {
