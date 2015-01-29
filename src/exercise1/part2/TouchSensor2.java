@@ -1,5 +1,6 @@
 package exercise1.part2;
 
+import lejos.nxt.Button;
 import lejos.nxt.SensorPort;
 import lejos.nxt.SensorPortListener;
 import rp.systems.Robot;
@@ -28,17 +29,20 @@ public class TouchSensor2 extends RobotProgrammingDemo {
 			}
 		});
 
-		while (m_run = true) {
+		while (m_run) {
 			robocop.forward();
 			if (pressed) {
 				pressed = false;
-				robocop.turn180();
+				robocop.turn(-5, 180);
 			}
 		}
 	}
 
 	public static void main(String[] args) {
 		RobotProgrammingDemo demo = new TouchSensor2();
+		System.out.println("Please press the orange button to start");
+		Button.waitForAnyPress();
+		System.out.print("Please press the escape button to stop.");
 		demo.run();
 	}
 

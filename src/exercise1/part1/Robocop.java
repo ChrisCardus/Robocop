@@ -36,17 +36,8 @@ public class Robocop extends RobotProgrammingDemo {
 			}
 		});
 
-		Button.ESCAPE.addButtonListener(new ButtonListener() {
-			public void buttonReleased(Button b) {
-			}
-
-			public void buttonPressed(Button b) {
-				direction = -1;
-			}
-		});
-
 		Button.waitForAnyPress();
-		while (m_run = true) {
+		while (m_run) {
 			if (direction == 0) {
 				robocop.left();
 			} else if (direction == 1) {

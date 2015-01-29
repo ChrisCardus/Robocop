@@ -19,11 +19,11 @@ public class Enclosure extends RobotProgrammingDemo {
 		while (m_run) {
 			robocop.followLeft();
 			if (robocop.bump()) {
-				robocop.move(-3);
-				if (robocop.distance() > 30) {
-					robocop.turn90(-90);
+				robocop.travel(-3);
+				if (robocop.getRange() > 30) {
+					robocop.turn(0, -90);
 				} else {
-					robocop.turn90(90);
+					robocop.turn(0, 90);
 				}
 			}
 		}

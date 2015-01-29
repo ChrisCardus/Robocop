@@ -37,13 +37,9 @@ public class Robot {
 			pilot.forward();
 		}
 	}
-	
-	public void turn180() {
-		pilot.travel(-5.0);
-		pilot.rotate(190);
-	}
 
-	public void turn90(int angle) {
+	public void turn(int distance, int angle) {
+		pilot.travel(distance);
 		pilot.rotate(angle);
 	}
 
@@ -63,11 +59,11 @@ public class Robot {
 		return touch.isPressed();
 	}
 
-	public float distance() {
+	public float getRange() {
 		return sonic.getRange();
 	}
 
-	public void move(int i) {
+	public void travel(int i) {
 		pilot.travel(i);
 	}
 
